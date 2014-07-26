@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pre-dex-items>
+
+    <item
+        dex="/Users/david/git/CastHelloText-android/build/intermediates/pre-dexed/debug/classes-7446a3acb71b49f8cd849d7483ae7fdfd4568786.jar"
+        jar="/Users/david/git/CastHelloText-android/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/19.0.1/classes.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="7f6ef78b879e271f8645b2f2c2702390305f0fa2"/>
+    <item
+        dex="/Users/david/git/CastHelloText-android/build/intermediates/pre-dexed/debug/classes-8c386ca2b783babedabc333aea14d7f33da53dae.jar"
+        jar="/Users/david/git/CastHelloText-android/build/intermediates/exploded-aar/com.google.android.gms/play-services/4.2.42/classes.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="e5f81129dfb3d02df80126512bc98278ed2bb40a"/>
+    <item
+        dex="/Users/david/git/CastHelloText-android/build/intermediates/pre-dexed/debug/classes-2cbc983605dcdd22cbe358913dd2c3563ce89d4a.jar"
+        jar="/Users/david/git/CastHelloText-android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/19.0.1/classes.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="f71a6822470c9eb659d4f4a6cb57b780b35f058b"/>
+    <item
+        dex="/Users/david/git/CastHelloText-android/build/intermediates/pre-dexed/debug/internal_impl-19.0.1-94119d3d050795d5e99045fe32092305cc0afa8d.jar"
+        jar="/Users/david/git/CastHelloText-android/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/19.0.1/libs/internal_impl-19.0.1.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="e1323875349a4e9b64fe8692f137f92b22dddcef"/>
+    <item
+        dex="/Users/david/git/CastHelloText-android/build/intermediates/pre-dexed/debug/support-v4-19.0.1-62725385a4045bc21d9f3532c2bdece81121813c.jar"
+        jar="/Users/david/Development/adt-bundle-mac-x86_64-20131030/sdk/extras/android/m2repository/com/android/support/support-v4/19.0.1/support-v4-19.0.1.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="587da9a481ffd341d2fa091704489b89845ddacd"/>
+
+</pre-dex-items>
