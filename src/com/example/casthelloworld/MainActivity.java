@@ -445,7 +445,9 @@ public class MainActivity extends ActionBarActivity {
 		public void onMessageReceived(CastDevice castDevice, String namespace,
 				String message) {
 			Log.d(TAG, "onMessageReceived: " + message);
+            Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
 		}
+
 
 	}
 
