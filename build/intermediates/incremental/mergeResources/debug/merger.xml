@@ -2033,16 +2033,16 @@
                     msgid="4181637455539816337" >"Habilitar servicios de Google Play"
                 </string>
                 <string
-                    name="common_google_play_services_network_error_title"
-                    msgid="3827284619958211114" >"Error de red"
-                </string>
-                <string
                     name="common_google_play_services_invalid_account_text"
                     msgid="4983316348021735578" >"La cuenta especificada no existe en este dispositivo. Selecciona otra cuenta."
                 </string>
                 <string
                     name="common_google_play_services_unsupported_title"
                     msgid="6334768798839376943" >"Servicios de Google Play"
+                </string>
+                <string
+                    name="common_google_play_services_network_error_title"
+                    msgid="3827284619958211114" >"Error de red"
                 </string>
                 <string
                     name="common_google_play_services_install_text_tablet"
@@ -5252,16 +5252,16 @@
                     msgid="2429381841831957106" >"Conectați-vă cu Google"
                 </string>
                 <string
-                    name="auth_client_play_services_err_notification_msg"
-                    msgid="3635065018897986478" >"Eroare Servicii Google Play"
-                </string>
-                <string
                     name="common_google_play_services_network_error_text"
                     msgid="9038847255613537209" >"Este necesară o conexiune de date pentru a vă conecta la serviciile Google Play."
                 </string>
                 <string
                     name="common_google_play_services_network_error_title"
                     msgid="3827284619958211114" >"Eroare de reţea"
+                </string>
+                <string
+                    name="auth_client_play_services_err_notification_msg"
+                    msgid="3635065018897986478" >"Eroare Servicii Google Play"
                 </string>
                 <string
                     name="common_signin_button_text"
@@ -5526,12 +5526,12 @@
                     msgid="448354684997260580" >"Ta aplikacija ne deluje, če ne posodobite storitev Google Play."
                 </string>
                 <string
-                    name="common_google_play_services_update_button"
-                    msgid="8932944190611227642" >"Posodobi"
-                </string>
-                <string
                     name="common_google_play_services_enable_text"
                     msgid="7627896071867667758" >"Aplikacija ne bo delovala, če ne omogočite storitev Google Play."
+                </string>
+                <string
+                    name="common_google_play_services_update_button"
+                    msgid="8932944190611227642" >"Posodobi"
                 </string>
                 <string
                     name="common_google_play_services_install_text_phone"
@@ -5562,12 +5562,12 @@
                     msgid="6334768798839376943" >"Storitve Google Play"
                 </string>
                 <string
-                    name="common_google_play_services_network_error_title"
-                    msgid="3827284619958211114" >"Omrežna napaka"
-                </string>
-                <string
                     name="auth_client_using_bad_version_title"
                     msgid="2534454398764507874" >"Aplikacija je poskusila uporabiti napačno različico Storitev Google Play."
+                </string>
+                <string
+                    name="common_google_play_services_network_error_title"
+                    msgid="3827284619958211114" >"Omrežna napaka"
                 </string>
                 <string
                     name="auth_client_requested_by_msg"
@@ -5589,12 +5589,12 @@
                     msgid="529078775174559253" >"Omogočite storitve Google Play"
                 </string>
                 <string
-                    name="common_google_play_services_unsupported_date_text"
-                    msgid="4725396522367789365" >"Videti je, da je datum v napravi napačen. Preverite ga."
-                </string>
-                <string
                     name="common_google_play_services_unsupported_text"
                     msgid="3542578567569488671" >"Vaša naprava na podpira storitev Google Play, ki jih potrebujejo nekatere od vaših aplikacij. Za pomoč se obrnite na izdelovalca."
+                </string>
+                <string
+                    name="common_google_play_services_unsupported_date_text"
+                    msgid="4725396522367789365" >"Videti je, da je datum v napravi napačen. Preverite ga."
                 </string>
                 <string
                     name="common_google_play_services_install_title"
@@ -5759,20 +5759,20 @@
                     msgid="448354684997260580" >"Du måste uppdatera Google Play Tjänster innan du kan köra den här appen."
                 </string>
                 <string
-                    name="common_google_play_services_unsupported_date_text"
-                    msgid="4725396522367789365" >"Datumet på enheten verkar inte vara rätt. Kontrollera datumet på enheten."
-                </string>
-                <string
                     name="common_google_play_services_update_button"
                     msgid="8932944190611227642" >"Uppdatera"
                 </string>
                 <string
-                    name="common_google_play_services_enable_button"
-                    msgid="4181637455539816337" >"Aktivera Google Play Tjänster"
+                    name="common_google_play_services_unsupported_date_text"
+                    msgid="4725396522367789365" >"Datumet på enheten verkar inte vara rätt. Kontrollera datumet på enheten."
                 </string>
                 <string
                     name="common_google_play_services_invalid_account_title"
                     msgid="1066672360770936753" >"Ogiltigt konto"
+                </string>
+                <string
+                    name="common_google_play_services_enable_button"
+                    msgid="4181637455539816337" >"Aktivera Google Play Tjänster"
                 </string>
                 <string
                     name="common_google_play_services_enable_text"
@@ -6604,12 +6604,12 @@
                 path="/Users/david/git/CastHelloText-android/build/intermediates/exploded-aar/com.google.android.gms/play-services/4.2.42/res/values-zh-rHK/strings.xml"
                 qualifiers="zh-rHK" >
                 <string
-                    name="common_google_play_services_update_button"
-                    msgid="8932944190611227642" >"更新"
-                </string>
-                <string
                     name="common_google_play_services_install_title"
                     msgid="26645092511305524" >"取得 Google Play 服務"
+                </string>
+                <string
+                    name="common_google_play_services_update_button"
+                    msgid="8932944190611227642" >"更新"
                 </string>
                 <string
                     name="common_google_play_services_unsupported_date_text"
@@ -6624,12 +6624,12 @@
                     msgid="6006316683626838685" >"更新 Google Play 服務"
                 </string>
                 <string
-                    name="common_google_play_services_unknown_issue"
-                    msgid="4762332809710093730" >"Google Play 服務出現不明問題。"
-                </string>
-                <string
                     name="common_google_play_services_enable_title"
                     msgid="529078775174559253" >"啟用 Google Play 服務"
+                </string>
+                <string
+                    name="common_google_play_services_unknown_issue"
+                    msgid="4762332809710093730" >"Google Play 服務出現不明問題。"
                 </string>
                 <string
                     name="auth_client_needs_update_title"
@@ -11163,16 +11163,16 @@ useLogo|showHome|showTitle
                     msgid="2031811694353399454" >"Επιλέξτε κάποια εφαρμογή"
                 </string>
                 <string
-                    name="abc_action_menu_overflow_description"
-                    msgid="3588849162933574182" >"Περισσότερες επιλογές"
-                </string>
-                <string
                     name="abc_searchview_description_clear"
                     msgid="3691816814315814921" >"Διαγραφή ερωτήματος"
                 </string>
                 <string
                     name="abc_searchview_description_voice"
                     msgid="893419373245838918" >"Φωνητική αναζήτηση"
+                </string>
+                <string
+                    name="abc_action_menu_overflow_description"
+                    msgid="3588849162933574182" >"Περισσότερες επιλογές"
                 </string>
             </file>
             <file
@@ -12451,16 +12451,16 @@ false
                     msgid="4076576682505996667" >"Atlikta"
                 </string>
                 <string
-                    name="abc_shareactionprovider_share_with_application"
-                    msgid="7165123711973476752" >"Bendrinti naudojant „%s“"
-                </string>
-                <string
                     name="abc_action_bar_home_description"
                     msgid="4600421777120114993" >"Eiti į pagrindinį puslapį"
                 </string>
                 <string
                     name="abc_searchview_description_search"
                     msgid="8264924765203268293" >"Paieška"
+                </string>
+                <string
+                    name="abc_shareactionprovider_share_with_application"
+                    msgid="7165123711973476752" >"Bendrinti naudojant „%s“"
                 </string>
             </file>
             <file
@@ -13095,16 +13095,16 @@ false
                     msgid="3588849162933574182" >"Več možnosti"
                 </string>
                 <string
-                    name="abc_action_mode_done"
-                    msgid="4076576682505996667" >"Končano"
+                    name="abc_shareactionprovider_share_with"
+                    msgid="3421042268587513524" >"Deljenje z"
                 </string>
                 <string
                     name="abc_activity_chooser_view_see_all"
                     msgid="7468859129482906941" >"Pokaži vse"
                 </string>
                 <string
-                    name="abc_shareactionprovider_share_with"
-                    msgid="3421042268587513524" >"Deljenje z"
+                    name="abc_action_mode_done"
+                    msgid="4076576682505996667" >"Končano"
                 </string>
                 <string
                     name="abc_action_bar_home_description"
@@ -13123,12 +13123,12 @@ false
                     msgid="8264924765203268293" >"Iskanje"
                 </string>
                 <string
-                    name="abc_searchview_description_query"
-                    msgid="2550479030709304392" >"Iskalna poizvedba"
-                </string>
-                <string
                     name="abc_searchview_description_submit"
                     msgid="8928215447528550784" >"Pošiljanje poizvedbe"
+                </string>
+                <string
+                    name="abc_searchview_description_query"
+                    msgid="2550479030709304392" >"Iskalna poizvedba"
                 </string>
                 <string
                     name="abc_searchview_description_voice"

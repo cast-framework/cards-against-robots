@@ -33,4 +33,44 @@
         android:layout_gravity="center"
         android:background="@drawable/voice_button" />
 
+    <Button
+        android:id="@+id/join"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:text="Send join"
+        />
+
+    <Button
+        android:id="@+id/quit"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="Send quit"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Text to send"
+            android:layout_weight="9"
+            />
+
+        <Button
+            android:id="@+id/send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Send"/>
+
+    </LinearLayout>
+
+
 </RelativeLayout>

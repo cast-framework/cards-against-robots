@@ -36,6 +36,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.cast.ApplicationMetadata;
@@ -97,6 +98,33 @@ public class MainActivity extends ActionBarActivity {
 						CastMediaControlIntent.categoryForCast(getResources()
 								.getString(R.string.app_id))).build();
 		mMediaRouterCallback = new MyMediaRouterCallback();
+
+
+        Button quit = (Button) findViewById(R.id.quit);
+        Button join = (Button) findViewById(R.id.join);
+
+        quit.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendMessage("{\"command\":\"quit\"}");
+            }
+        });
+
+        join.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendMessage("{\"command\":\"join\"}");
+            }
+        });
+
+        Button send = (Button) findViewById(R.id.send);
+        send.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditText et = (EditText) findViewById(R.id.data);
+                sendMessage(et.getText().toString());
+            }
+        });
 	}
 
 	/**
@@ -382,13 +410,13 @@ public class MainActivity extends ActionBarActivity {
 				Cast.CastApi.sendMessage(mApiClient,
 						mHelloWorldChannel.getNamespace(), message)
 						.setResultCallback(new ResultCallback<Status>() {
-							@Override
-							public void onResult(Status result) {
-								if (!result.isSuccess()) {
-									Log.e(TAG, "Sending message failed");
-								}
-							}
-						});
+                            @Override
+                            public void onResult(Status result) {
+                                if (!result.isSuccess()) {
+                                    Log.e(TAG, "Sending message failed");
+                                }
+                            }
+                        });
 			} catch (Exception e) {
 				Log.e(TAG, "Exception while sending message", e);
 			}
