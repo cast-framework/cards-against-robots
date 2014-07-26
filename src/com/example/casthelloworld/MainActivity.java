@@ -106,14 +106,14 @@ public class MainActivity extends ActionBarActivity {
         quit.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                sendMessage("{'command':'quit'}");
+                sendMessage("{\"command\":\"quit\"}");
             }
         });
 
         join.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                sendMessage("{'command':'join'}");
+                sendMessage("{\"command\":\"join\"}");
             }
         });
 
