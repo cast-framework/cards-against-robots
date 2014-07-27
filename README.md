@@ -1,30 +1,67 @@
-# HelloText-Android
+Chromecast Gaming Framework
+======
 
-This Google Cast demo application shows how to send messages from an Android device to a receiver using a custom namespace. 
+Chromecast is a great device for media streaming, but we wanted to take it to the next level and use it to create a social screen. 
 
-## Dependencies
-* The Android SDK android-support-v7-appcompat and android-support-v7-mediarouter support libraries (at least revision 19).
-* The Android SDK google-play-services_lib library (at least version 4.2)
+Google includes a handfull of streaming media APIs in the Cast framework, but there is little OOTB support for social gaming experiences. 
 
-## Setup Instructions
-* Just check out the code from GitHub and run the app on your mobile device
-* If you don't want to use the sample App ID, you need to do the following steps
-* Get a Chromecast device and get it set up for development: https://developers.google.com/cast/docs/developers#Get_started
-* Register an application on the Developers Console (http://cast.google.com/publish). Select the Custom Receiver option and specify the URL to where you are hosting the receiver/receiver.html file (You can use Google Drive to host your files: https://support.google.com/drive/answer/2881970?hl=en). You will get an App ID when you finish registering your application.
-* Setup the project dependencies
-* Insert your App ID in the strings.xml in the res directory of the project (look for app_id in that file)
-* Compile and deploy to your Android device.
+We took the over 400 lines of boilerplate code that is necessary to communicate with the Chromecast and turned it into a small number of lifecycle calls that developers can use to connect to a cast. 
 
-## References and How to report bugs
-* Cast APIs: http://developers.google.com/cast/docs
-* Design Checklist (http://developers.google.com/cast/docs/design_checklist)
-* If you find any issues, please open a bug here on GitHub
+Usage
+=====
 
-## How to make contributions?
-Please read and follow the steps in the CONTRIBUTING.md
 
-## License
-See LICENSE
+In your activity's onCreate methos create a new CastManager
 
-## Google+
-Google Cast Developers Community on Google+ [http://goo.gl/TPLDxj](http://goo.gl/TPLDxj)
+
+```
+class MyActivity extends Activity {
+	
+    @Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+
+        mCastManager = new CastManager(this);
+
+        ...
+    }
+
+
+    @Override
+	protected void onResume() {
+		super.onResume();
+		mCastManager.onResume(this);
+	}
+
+	@Override
+	protected void onPause() {
+		mCastManager.onPause(this);
+		super.onPause();
+	}
+
+	@Override
+	public void onDestroy() {
+		mCastManager.onDestroy(this);
+		super.onDestroy();
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		super.onCreateOptionsMenu(menu);
+        getMenuInflater().inflate(R.menu.main, menu);
+        mCastManager.setMenu(menu);
+
+		return true;
+	}
+}
+```
+
+You can then send messages in JSON with 
+
+```
+mCastManaget.sendMessage(new JSONObject("{\"key\":\"value\""}))
+```
+
+
+Happy casting!
