@@ -1,4 +1,4 @@
-package com.example.casthelloworld;
+package com.davidtschida.android.cast.framework;
 
 import android.app.Application;
 

@@ -1,4 +1,4 @@
-package com.example.casthelloworld;
+package com.davidtschida.android.cast.framework;
 
 import android.app.Activity;
 import android.content.Context;
@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.davidtschida.android.cards.R;
 import com.google.android.gms.cast.Cast;
 import com.google.android.gms.cast.CastDevice;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -74,7 +75,7 @@ public class CastManager {
                 MediaRouter.CALLBACK_FLAG_PERFORM_ACTIVE_SCAN);
     }
 
-    protected void onPause(Activity activity) {
+    public void onPause(Activity activity) {
         if (activity.isFinishing()) {
             // End media router discovery
             mMediaRouter.removeCallback(mMediaRouterCallback);

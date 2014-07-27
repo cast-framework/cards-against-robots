@@ -16,9 +16,9 @@
 -->
 <resources>
 
-    <string name="app_name">Cast Hello Text</string>
+    <string name="app_name">Cards Against Robots</string>
     <string name="app_id">4860FC59</string>
-    <string name="namespace">urn:x-cast:com.google.cast.sample.helloworld</string>
+    <string name="namespace">urn:x-cast:com.davidtschida.android.cards</string>
     <string name="action_settings">Settings</string>
     <string name="message_to_cast">Message to Cast&#8230;</string>
     <string name="media_route_menu_title">Play on&#8230;</string>

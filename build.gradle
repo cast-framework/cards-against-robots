@@ -15,7 +15,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 19
-    buildToolsVersion "19.1.0"
+    buildToolsVersion '19.1.0'
 
     defaultConfig {
         minSdkVersion 10
@@ -33,6 +33,7 @@ android {
 
 dependencies {
     compile 'com.android.support:appcompat-v7:19.0.1'
-    compile 'com.android.support:mediarouter-v7:19.0.1' 
+    compile 'com.android.support:mediarouter-v7:19.0.1'
     compile 'com.google.android.gms:play-services:4.2.+'
+    compile project(':CardsUILib')
 }
