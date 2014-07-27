@@ -14,6 +14,8 @@ public class CARCard extends RecyclableCard {
     private String title;
 
     public CARCard(String title) {
+
+        setData(title);
         this.title = title;
     }
 

@@ -51,6 +51,7 @@ public class CastManager {
     private boolean mWaitingForReconnect;
     private String mSessionId;
     private OnMessageReceivedListener mMessageListener;
+    private OnCastConnectedListener mConnectedListener;
 
     public CastManager(Context c) {
         this.mContext = c;
@@ -91,6 +92,10 @@ public class CastManager {
                 .getActionProvider(mediaRouteMenuItem);
         // Set the MediaRouteActionProvider selector for device discovery.
         mediaRouteActionProvider.setRouteSelector(mMediaRouteSelector);
+    }
+
+    public void setConnectedListener(OnCastConnectedListener mConnectedListener) {
+        this.mConnectedListener = mConnectedListener;
     }
 
 
@@ -184,7 +189,7 @@ public class CastManager {
 
                                                 // set the initial instructions
                                                 // on the receiver
-                                                sendMessage(mContext.getString(R.string.instructions));
+                                                mConnectedListener.onCastConnected();
                                             } else {
                                                 Log.e(TAG,
                                                         "application could not launch");
@@ -253,7 +258,7 @@ public class CastManager {
      *
      * @param message
      */
-    private void sendMessage(String message) {
+    private void sendMessage(final String message) {
         if (mApiClient != null && mHelloWorldChannel != null) {
             try {
                 Cast.CastApi.sendMessage(mApiClient,
@@ -262,7 +267,9 @@ public class CastManager {
                             @Override
                             public void onResult(Status result) {
                                 if (!result.isSuccess()) {
-                                    Log.e(TAG, "Sending message failed");
+                                    Log.e(TAG, "Sending message < " + message + " > failed");
+                                } else {
+                                    Log.i(TAG, "Sending of message < " + message + " > succeeded" );
                                 }
                             }
                         });
@@ -302,11 +309,12 @@ public class CastManager {
         public void onMessageReceived(CastDevice castDevice, String namespace,
                                       String message) {
             Log.d(TAG, "onMessageReceived: " + message);
-            Toast.makeText(mContext, message, Toast.LENGTH_SHORT).show();
+            Toast.makeText(mContext, "R:" +  message, Toast.LENGTH_SHORT).show();
 
             try {
                 JSONObject json = new JSONObject(message);
-                mMessageListener.onMessageRecieved(json);
+                if(mMessageListener != null)
+                    mMessageListener.onMessageRecieved(json);
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -325,6 +333,8 @@ public class CastManager {
             mSelectedDevice = CastDevice.getFromBundle(info.getExtras());
 
             launchReceiver();
+
+            mConnectedListener.onCastConnected();
         }
 
         @Override

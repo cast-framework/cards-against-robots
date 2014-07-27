@@ -15,4 +15,12 @@
         android:textColor="@android:color/black"
         android:text="Waiting for players..." />
 
+    <Button
+        android:id="@+id/ready"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="Start Game"/>
+
 </RelativeLayout>

@@ -25,6 +25,7 @@ import android.view.Menu;
 import com.davidtschida.android.cards.fragments.CardListFragment;
 import com.davidtschida.android.cards.fragments.CzarFragment;
 import com.davidtschida.android.cards.fragments.WaitingForPlayersFragment;
+import com.davidtschida.android.cards.fragments.WelcomeFragment;
 import com.davidtschida.android.cast.framework.CastManager;
 
 /**
@@ -45,7 +46,10 @@ public class MainActivity extends ActionBarActivity implements CastmanagerHost {
 
         initActionBar();
 
-        getSupportFragmentManager().beginTransaction().add(R.id.content, new WaitingForPlayersFragment()).commit();
+        WelcomeFragment w = new WelcomeFragment();
+        getCastmanager().setConnectedListener(w);
+
+        getSupportFragmentManager().beginTransaction().add(R.id.content, w).commit();
 	}
 
     private void initActionBar() {

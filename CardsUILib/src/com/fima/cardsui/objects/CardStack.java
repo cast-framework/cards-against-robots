@@ -33,6 +33,7 @@ public class CardStack extends AbstractCard {
     private Context mContext;
     private CardStack mStack;
 
+
     public CardStack() {
         cards = new ArrayList<Card>();
         mStack = this;
