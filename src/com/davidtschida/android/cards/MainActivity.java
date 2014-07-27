@@ -22,6 +22,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 
+import com.davidtschida.android.cards.fragments.CardListFragment;
 import com.davidtschida.android.cards.fragments.CzarFragment;
 import com.davidtschida.android.cast.framework.CastManager;
 
@@ -46,7 +47,7 @@ public class MainActivity extends ActionBarActivity implements CastmanagerHost {
 
         initActionBar();
 
-        getSupportFragmentManager().beginTransaction().add(R.id.content, CzarFragment.newInstance(new CardItem("This is bullshit")), "CardListFragment").commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.content, new CardListFragment(), "CardListFragment").commit();
 	}
 
 
