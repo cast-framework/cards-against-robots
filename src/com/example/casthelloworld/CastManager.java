@@ -52,17 +52,17 @@ public class CastManager {
 
     public CastManager(Context c) {
         this.mContext = c;
+        init();
     }
 
-    public void init(Context c) {
+    private void init() {
         // Configure Cast device discovery
-        mMediaRouter = MediaRouter.getInstance(c.getApplicationContext());
+        mMediaRouter = MediaRouter.getInstance(mContext.getApplicationContext());
         mMediaRouteSelector = new MediaRouteSelector.Builder()
                 .addControlCategory(
-                        CastMediaControlIntent.categoryForCast(c.getResources()
+                        CastMediaControlIntent.categoryForCast(mContext.getResources()
                                 .getString(R.string.app_id))).build();
         mMediaRouterCallback = new MyMediaRouterCallback();
-
 
     }
 
@@ -276,7 +276,7 @@ public class CastManager {
     /**
      * Custom message channel
      */
-    class HelloWorldChannel implements MessageReceivedCallback {
+    private class HelloWorldChannel implements MessageReceivedCallback {
 
         /**
          * @return custom namespace
