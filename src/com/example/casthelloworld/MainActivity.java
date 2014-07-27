@@ -150,7 +150,7 @@ public class MainActivity extends ActionBarActivity {
 
                 JSONObject json = new JSONObject();
                 try {
-                    json.put("content", matches.get(0));
+                    json.put("command", matches.get(0));
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
