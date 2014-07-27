@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#aaa">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:background="@drawable/blackcard" />
+
+    <FrameLayout
+        android:id="@+id/front"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:layout_marginTop="50dp"
+            android:padding="30dp"
+            android:textSize="40sp"
+            android:textColor="@android:color/white"
+            android:text="What did I eat for breakfast?" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_margin="30dp"
+                android:layout_alignParentBottom="true"
+                android:src="@drawable/logo_full_white"
+                android:scaleType="centerInside"/>
+
+        </RelativeLayout>
+
+        </FrameLayout>
+
+
+    <FrameLayout
+        android:id="@+id/back"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:layout_centerVertical="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_marginTop="50dp"
+                android:padding="30dp"
+                android:textSize="60sp"
+                android:textColor="@android:color/white"
+                android:text="Cards Against Robots" />
+
+        </RelativeLayout>
+
+
+
+    </FrameLayout>
+
+</FrameLayout>

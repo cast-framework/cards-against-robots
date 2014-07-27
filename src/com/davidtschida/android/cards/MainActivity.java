@@ -22,14 +22,14 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 
-import com.davidtschida.android.cards.fragments.CardListFragment;
+import com.davidtschida.android.cards.fragments.CzarFragment;
 import com.davidtschida.android.cast.framework.CastManager;
 
 
 /**
  * Main activity to send messages to the receiver.
  */
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity implements CastmanagerHost {
 
 	private static final String TAG = MainActivity.class.getSimpleName();
 
@@ -46,7 +46,7 @@ public class MainActivity extends ActionBarActivity {
 
         initActionBar();
 
-        getSupportFragmentManager().beginTransaction().add(R.id.content, new CardListFragment(),"CardListFragment").commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.content, CzarFragment.newInstance(new CardItem("This is bullshit")), "CardListFragment").commit();
 	}
 
 
@@ -82,4 +82,9 @@ public class MainActivity extends ActionBarActivity {
 
 		return true;
 	}
+
+    @Override
+    public CastManager getCastmanager() {
+        return mCastManager;
+    }
 }

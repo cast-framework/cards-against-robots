@@ -2,14 +2,15 @@
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#ddd">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/title"
         android:text="Swipe card to select card"
-        android:textColor="@android:color/darker_gray"
+        android:textColor="#aaa"
         android:textSize="25sp"
         android:gravity="center"
         android:paddingTop="10dp"

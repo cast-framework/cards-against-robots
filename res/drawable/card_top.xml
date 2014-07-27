@@ -17,6 +17,6 @@
     <corners
         android:bottomLeftRadius="0dp"
         android:bottomRightRadius="0dp"
-        android:topLeftRadius="25dp"
-        android:topRightRadius="25dp" />
+        android:topLeftRadius="@dimen/card_radius"
+        android:topRightRadius="@dimen/card_radius" />
 </shape>
