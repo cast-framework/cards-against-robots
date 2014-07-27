@@ -24,8 +24,8 @@ import android.view.Menu;
 
 import com.davidtschida.android.cards.fragments.CardListFragment;
 import com.davidtschida.android.cards.fragments.CzarFragment;
+import com.davidtschida.android.cards.fragments.WaitingForPlayersFragment;
 import com.davidtschida.android.cast.framework.CastManager;
-
 
 /**
  * Main activity to send messages to the receiver.
@@ -33,8 +33,6 @@ import com.davidtschida.android.cast.framework.CastManager;
 public class MainActivity extends ActionBarActivity implements CastmanagerHost {
 
 	private static final String TAG = MainActivity.class.getSimpleName();
-
-	private static final int REQUEST_CODE = 1;
 
     CastManager mCastManager;
 
@@ -47,9 +45,8 @@ public class MainActivity extends ActionBarActivity implements CastmanagerHost {
 
         initActionBar();
 
-        getSupportFragmentManager().beginTransaction().add(R.id.content, new CardListFragment(), "CardListFragment").commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.content, new WaitingForPlayersFragment()).commit();
 	}
-
 
     private void initActionBar() {
         ActionBar actionBar = getSupportActionBar();

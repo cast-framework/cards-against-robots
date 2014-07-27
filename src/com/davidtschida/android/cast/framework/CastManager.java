@@ -19,16 +19,14 @@ import com.google.android.gms.common.api.GoogleApiClient;
 
 
 import com.google.android.gms.cast.ApplicationMetadata;
-import com.google.android.gms.cast.Cast;
 import com.google.android.gms.cast.Cast.ApplicationConnectionResult;
 import com.google.android.gms.cast.Cast.MessageReceivedCallback;
-import com.google.android.gms.cast.CastDevice;
 import com.google.android.gms.cast.CastMediaControlIntent;
 import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -52,6 +50,7 @@ public class CastManager {
     private boolean mApplicationStarted;
     private boolean mWaitingForReconnect;
     private String mSessionId;
+    private OnMessageReceivedListener mMessageListener;
 
     public CastManager(Context c) {
         this.mContext = c;
@@ -280,6 +279,10 @@ public class CastManager {
         sendMessage(json.toString());
     }
 
+
+    public void setOnMessageRecievedListener(OnMessageReceivedListener listener) {
+        mMessageListener = listener;
+    }
     /**
      * Custom message channel
      */
@@ -300,9 +303,14 @@ public class CastManager {
                                       String message) {
             Log.d(TAG, "onMessageReceived: " + message);
             Toast.makeText(mContext, message, Toast.LENGTH_SHORT).show();
+
+            try {
+                JSONObject json = new JSONObject(message);
+                mMessageListener.onMessageRecieved(json);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
         }
-
-
     }
 
     /**

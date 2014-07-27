@@ -19,11 +19,9 @@ import org.json.JSONObject;
 /**
  * Created by david on 7/27/14.
  */
-public class CzarFragment extends Fragment {
+public class CzarFragment extends CastFragment {
 
     private String title;
-
-    private CastmanagerHost host;
 
     public CzarFragment() {
     }
@@ -41,10 +39,6 @@ public class CzarFragment extends Fragment {
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         title = getArguments().getString("card", "ERROR!");
-
-        if(activity instanceof CastmanagerHost) {
-            host = (CastmanagerHost) activity;
-        } else throw new ClassCastException("Activity must implement CastmanagerHost!");
     }
 
     @Override
