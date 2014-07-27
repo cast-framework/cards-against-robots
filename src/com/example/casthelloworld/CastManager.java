@@ -28,6 +28,8 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
 
+import org.json.JSONObject;
+
 import java.io.IOException;
 
 /**
@@ -225,7 +227,7 @@ public class CastManager {
             if (mApplicationStarted) {
                 if (mApiClient.isConnected()) {
                     try {
-                        Cast.CastApi.stopApplication(mApiClient, mSessionId);
+                        Cast.CastApi.leaveApplication(mApiClient);
                         if (mHelloWorldChannel != null) {
                             Cast.CastApi.removeMessageReceivedCallbacks(
                                     mApiClient,
@@ -251,7 +253,7 @@ public class CastManager {
      *
      * @param message
      */
-    public void sendMessage(String message) {
+    private void sendMessage(String message) {
         if (mApiClient != null && mHelloWorldChannel != null) {
             try {
                 Cast.CastApi.sendMessage(mApiClient,
@@ -271,6 +273,10 @@ public class CastManager {
             Toast.makeText(mContext, message, Toast.LENGTH_SHORT)
                     .show();
         }
+    }
+
+    public void sendMessage(JSONObject json) {
+        sendMessage(json.toString());
     }
 
     /**

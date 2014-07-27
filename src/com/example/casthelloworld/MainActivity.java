@@ -23,20 +23,17 @@ import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
-import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.MediaRouteActionProvider;
-import android.support.v7.media.MediaRouteSelector;
-import android.support.v7.media.MediaRouter;
-import android.support.v7.media.MediaRouter.RouteInfo;
 import android.util.Log;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 /**
  * Main activity to send messages to the receiver.
@@ -78,14 +75,26 @@ public class MainActivity extends ActionBarActivity {
         quit.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                mCastManager.sendMessage("{\"command\":\"quit\"}");
+                JSONObject json = new JSONObject();
+                try {
+                    json.put("command", "quit");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                mCastManager.sendMessage(json);
             }
         });
 
         join.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                mCastManager.sendMessage("{\"command\":\"join\"}");
+                JSONObject json = new JSONObject();
+                try {
+                    json.put("command", "join");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                mCastManager.sendMessage(json);
             }
         });
 
@@ -94,7 +103,15 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 EditText et = (EditText) findViewById(R.id.data);
-                mCastManager.sendMessage(et.getText().toString());
+
+                JSONObject json = new JSONObject();
+                try {
+                    json.put("content", et.getText().toString());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                mCastManager.sendMessage(json);
             }
         });
     }
@@ -130,7 +147,14 @@ public class MainActivity extends ActionBarActivity {
 					.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
 			if (matches.size() > 0) {
 				Log.d(TAG, matches.get(0));
-				mCastManager.sendMessage(matches.get(0));
+
+                JSONObject json = new JSONObject();
+                try {
+                    json.put("content", matches.get(0));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                mCastManager.sendMessage(json);
 			}
 		}
 		super.onActivityResult(requestCode, resultCode, data);
