@@ -10,6 +10,11 @@ We took the over 400 lines of boilerplate code that is necessary to communicate 
 Usage
 =====
 
+As of now, the framework is located inside the example application, but we will be packaging it in a standalone repo soon. Until then look for it in: 
+
+```
+package com.davidtschida.android.cast.framework;
+```
 
 In your activity's onCreate methos create a new CastManager
 
