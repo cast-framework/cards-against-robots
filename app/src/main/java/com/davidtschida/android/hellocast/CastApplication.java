@@ -3,6 +3,7 @@ package com.davidtschida.android.hellocast;
 import android.app.Application;
 import android.content.Context;
 
+import com.google.sample.castcompanionlibrary.cast.DataCastManager;
 import com.google.sample.castcompanionlibrary.cast.VideoCastManager;
 import com.google.sample.castcompanionlibrary.utils.Utils;
 
@@ -20,7 +21,7 @@ public class CastApplication extends Application {
 
 
     private static String APPLICATION_ID;
-    private static VideoCastManager mCastMgr = null;
+    private static DataCastManager mCastMgr = null;
     public static final double VOLUME_INCREMENT = 0.05;
     private static Context mAppContext;
 
@@ -38,14 +39,14 @@ public class CastApplication extends Application {
 
     }
 
-    public static VideoCastManager getCastManager(Context context) {
+    public static DataCastManager getCastManager(Context context) {
         if (null == mCastMgr) {
-            mCastMgr = VideoCastManager.initialize(context, APPLICATION_ID,
+            mCastMgr = DataCastManager.initialize(context, APPLICATION_ID,
                     null, null);
             mCastMgr.enableFeatures(
-                    VideoCastManager.FEATURE_NOTIFICATION |
-                            VideoCastManager.FEATURE_LOCKSCREEN |
-                            VideoCastManager.FEATURE_DEBUGGING);
+                    DataCastManager.FEATURE_NOTIFICATION |
+                            DataCastManager.FEATURE_LOCKSCREEN |
+                            DataCastManager.FEATURE_DEBUGGING);
 
         }
         mCastMgr.setContext(context);
